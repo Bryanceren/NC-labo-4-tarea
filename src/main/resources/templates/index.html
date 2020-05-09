@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<title>venta</title>
+</head>
+<body>
+
+    <div class="section no-pad-bot" id="index-banner">
+
+	<div class = "container ">
+	<form th:action="@{formProducto}" th:object = "${producto}" method = "post" class="col s6 card grey lighten-4">
+            <br>
+            <h2 class="header center">Ingrese su producto</h2>
+
+            <div class="row center">
+              <div class="input-field col s6 offset-s3">
+                <input id = "nombre" type = "text" th:field = "${producto.nombre}">
+				<span th:errors = "*{nombre}" style = "color : #E81505;"></span>
+                <label for="nombre">nombre</label>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="input-field col s6 offset-s3">
+				<input id = "descripcion" type = "text" th:field = "*{descripcion}">
+                <label for="descripcion">Descripcion</label>
+       			<span th:errors = "*{descripcion}" style = "color : #E81505;"></span>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="input-field col s6 offset-s3">
+				<label for = "precio">Precio producto:</label>
+				<input id="precio" type = "number" th:field = "*{precio}">
+				<span th:errors = "*{precio}" style = "color : #E81505;"></span>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="input-field col s6 offset-s3">
+				<label for="vencimiento">Fecha vencimiento:</label>
+				<input id="vencimiento" type = "text" th:field = "*{vencimiento}">
+				<span th:errors = "*{vencimiento}" style = "color : #E81505;"></span>
+              </div>
+            </div>
+            <br>
+            <div class="row center">
+              <button class="btn waves-effect col s4 offset-s4 btn-large" type="submit" name="action">Agregar producto
+                <i class="material-icons right">add</i>
+              </button>
+            </div>
+           
+            <br>
+          </form>
+          
+          
+		<form th:action="@{formProducto}" th:object = "${producto}" method = "post" class="col s6 card grey darken-2">
+			
+	
+			
+			
+			
+			
+			
+		</form>
+	</div>
+	</div>
+	 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>

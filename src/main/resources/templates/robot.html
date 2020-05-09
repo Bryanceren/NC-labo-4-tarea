@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<title>seguridad</title>
+</head>
+<body>
+	<div class = "container">
+	<form th:action = "@{/seguridad}" th:object = "${robot}" method = "post" class="col s8 card grey lighten-4">
+		<br>
+		<br>
+		<br>
+
+	    <div class="row center">
+
+			<p>
+		      <label>
+				<input id="robot" type="radio" th:field = "*{soyRobot}" th:value = ${false}>
+		        <span>Marcar solo si usted es un robot</span>
+		      	<span th:errors = "*{soyRobot}" class="red-text"></span>
+		      </label>
+		    </p>
+		</div>
+	    <br>
+	    <div class="row center">
+		<button class="btn waves-effect col s4 offset-s4 btn-large center" type="submit" name="action">Agregar producto
+                <i class="material-icons right">add</i>
+              </button>
+		</div>
+				<br>
+		
+	</form>
+	<a href = "/producto">Regresar</a>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
